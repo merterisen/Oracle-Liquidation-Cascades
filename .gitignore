@@ -1,2 +1,3 @@
 .venv
-bq-results-raw-full.csv
+data/
+.DS_Store
