@@ -88,3 +88,36 @@ def hex_to_int_signed_256(x):
     except Exception:
         return np.nan
 
+def detect_time_unit_from_value(value):
+    """
+    Detect timestamp unit from magnitude.
+    seconds:      ~1e9
+    milliseconds: ~1e12
+    microseconds: ~1e15
+    nanoseconds:  ~1e18
+    """
+    if pd.isna(value):
+        return "unknown"
+
+    value = float(value)
+
+    if value > 1e17:
+        return "ns"
+    elif value > 1e14:
+        return "us"
+    elif value > 1e11:
+        return "ms"
+    elif value > 1e8:
+        return "s"
+    else:
+        return "unknown"
+
+
+def symbol_from_filename(path):
+    upper = path.upper()
+
+    for sym in ["BTCUSDT", "ETHUSDT", "USDCUSDT", "LINKUSDT"]:
+        if sym in upper:
+            return sym
+
+    return "unknown"
