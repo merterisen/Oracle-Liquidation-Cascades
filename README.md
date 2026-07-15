@@ -1,9 +1,9 @@
 Setup:
-Put these datas into data/raw rolder
-    AAVE_Tvl_Data.csv
-    ETH_Total_Tvl_Data.csv
-    Binance_Data_1m_2021_2024.csv
-    bq-results-raw-full.csv
+Put these datas into data/raw rolder  
+    AAVE_Tvl_Data.csv  
+    ETH_Total_Tvl_Data.csv  
+    Binance_Data_1m_2021_2024.csv  
+    bq-results-raw-full.csv  
 
 query for bq-results-raw-full.csv:
 ```
